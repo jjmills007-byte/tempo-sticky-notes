@@ -1,0 +1,130 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #1e293b;
+}
+
+.app-header button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1e9f0d;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app-header button:hover {
+  background-color: #1b8e0c;
+}
+
+.workspace {
+  position: relative;
+  flex: 1;
+  min-height: 600px;
+  margin: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.sticky-note {
+  position: absolute;
+  width: 220px;
+  height: 180px;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #fef08a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+.sticky-note:active {
+    cursor: grabbing;
+}
+
+.sticky-note-text {
+  display: block;
+  margin: 0;
+  color: #4b2508;
+  font-size: 1.2rem;
+  background-color: #fef08a;
+  border: none;
+  outline: none;
+  width: 100%;
+  min-height: 24px;
+  max-height: 100%;
+  resize: none;
+  field-sizing: content;
+}
+.sticky-note-text::placeholder {
+  color: #74533b;
+}
+
+.resize-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  cursor: nwse-resize;
+  touch-action: none;
+}
+.resize-icon::after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 14px;
+  height: 14px;
+  background: repeating-linear-gradient(
+    135deg,
+    transparent 0.5px 4px,
+    #927b35 4px 6px,
+    transparent 2px 2px
+  );
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+
+.trash-zone {
+  position: absolute;
+  width: 400px;
+  height: 180px;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  text-align: center;
+  align-content: center;
+  border: 1px dashed grey;
+  border-radius: 10px;
+  background-color: #dedede;
+  color: grey;
+  pointer-events: none;
+  z-index: 1;
+}
+.trash-zone-active {
+  border: 2px solid #eb4034;
+  background-color: #f7cbc8;
+  color: #eb4034;
+}
